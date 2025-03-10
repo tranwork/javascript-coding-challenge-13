@@ -26,3 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
     addEmployeeCard("Alice Johnson", "Software Engineer");
     addEmployeeCard("Bob Smith", "Project Manager");
 });
+
+
+//Task 3: Bulk Update on Employee Cards
+function highlightAllEmployees() {
+    const cards = Array.from(document.querySelectorAll(".employee-card"));
+    cards.forEach(card => {
+        card.style.border = "2px solid blue";
+        card.style.backgroundColor = "#f0f8ff";
+    });
+}
+
+// Test Case
+highlightAllEmployees();
