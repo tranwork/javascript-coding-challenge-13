@@ -50,3 +50,37 @@ employeeContainer.addEventListener("click", (event) => {
         console.log("Employee Card Clicked");
     }
 });
+
+
+//Task 5: Inline Editing for Employee Cards
+employeeContainer.addEventListener("dblclick", (event) => {
+    const card = event.target.closest(".employee-card");
+    if (!card) return;
+
+    const nameElem = card.querySelector("h3");
+    const positionElem = card.querySelector("p");
+
+    const nameInput = document.createElement("input");
+    nameInput.value = nameElem.textContent;
+
+    const positionInput = document.createElement("input");
+    positionInput.value = positionElem.textContent;
+
+    const saveBtn = document.createElement("button");
+    saveBtn.textContent = "Save";
+
+    card.innerHTML = "";
+    card.appendChild(nameInput);
+    card.appendChild(positionInput);
+    card.appendChild(saveBtn);
+
+    saveBtn.addEventListener("click", () => {
+        nameElem.textContent = nameInput.value;
+        positionElem.textContent = positionInput.value;
+
+        card.innerHTML = "";
+        card.appendChild(nameElem);
+        card.appendChild(positionElem);
+        card.appendChild(saveBtn);
+    });
+});
