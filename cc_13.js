@@ -1,30 +1,31 @@
 //Task 2: Adding Employee Cards Dynamically
-document.addEventListener("DOMContentLoaded", () => {
-    const employeeContainer = document.getElementById("employeeContainer");
+document.addEventListener("DOMContentLoaded", function() {
+    let employeeContainer = document.getElementById("employeeContainer");
 
-    function addEmployeeCard(name, position) {
-        const card = document.createElement("div");
+    function addEmployee(name, position) {
+        let card = document.createElement("div");
         card.classList.add("employee-card");
 
-        const nameElem = document.createElement("h3");
-        nameElem.textContent = name;
+        let nameElement = document.createElement("h3");
+        nameElement.innerText = name;
+        let positionElement = document.createElement("p");
+        positionElement.innerText = position;
 
-        const positionElem = document.createElement("p");
-        positionElem.textContent = position;
+        let removeButton = document.createElement("button");
+        removeButton.innerText = "Remove";
+        removeButton.onclick = function() {
+            employeeContainer.removeChild(card);
+        };
 
-        const removeBtn = document.createElement("button");
-        removeBtn.textContent = "Remove";
-        removeBtn.classList.add("remove-btn");
-
-        card.appendChild(nameElem);
-        card.appendChild(positionElem);
-        card.appendChild(removeBtn);
+        card.appendChild(nameElement);
+        card.appendChild(positionElement);
+        card.appendChild(removeButton);
         employeeContainer.appendChild(card);
     }
 
-    // Test Cases
-    addEmployeeCard("Alice Johnson", "Software Engineer");
-    addEmployeeCard("Bob Smith", "Project Manager");
+    // Add test employees
+    addEmployee("Alice Johnson", "Software Engineer");
+    addEmployee("Bob Smith", "Project Manager");
 });
 
 
