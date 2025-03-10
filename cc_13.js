@@ -39,3 +39,14 @@ function highlightAllEmployees() {
 
 // Test Case
 highlightAllEmployees();
+
+
+//Task 4: Employee Card Removal with Event Bubbling
+employeeContainer.addEventListener("click", (event) => {
+    if (event.target.classList.contains("remove-btn")) {
+        event.stopPropagation();
+        event.target.parentElement.remove();
+    } else {
+        console.log("Employee Card Clicked");
+    }
+});
