@@ -27,11 +27,43 @@
 
         /* Employee Container */
         #employeeContainer {
-            background-color: #bfecec;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
             padding: 20px;
-            margin: 10px;
-            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* Employee Cards */
+        .employee-card {
+            background-color: #f8c6d3;
             border: 2px solid black;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 250px;
+        }
+
+        .employee-card h3 {
+            font-weight: bold;
+            color: black;
+        }
+
+        .employee-card p {
+            margin: 5px 0;
+            color: black;
+        }
+
+        /* Buttons */
+        .employee-card button {
+            display: block;
+            width: 80%;
+            margin: 5px auto;
+            padding: 5px;
+            border: none;
+            background-color: #ccc;
+            cursor: pointer;
         }
 
         /* Footer */
@@ -44,9 +76,9 @@
     <header>Employee Management Dashboard</header>
     <main>
         <div id="employeeContainer">
-            <p>Current Employees</p>
+            <!-- Employee Cards will be added dynamically -->
         </div>
     </main>
-    <footer>2025 Employee Management System</footer>
+    <footer>Jenny's Employee Management System</footer>
 </body>
 </html>
